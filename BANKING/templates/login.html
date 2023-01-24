@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign in</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/srs.png' %}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+   
+<style>
+    body{
+        background-image: url(https://banking.lemnisk.co/assets/img/DigitalBankBackground.png);
+        background-size: cover;
+        height: 600px;
+        background-repeat: no-repeat;
+       
+    }
+    .fa {  
+   
+text-align: center;  
+  margin: 2px 2px;  
+  font-size: 30px;  
+  width: 50px;  
+}  
+.fa-facebook {  
+    
+  color: #3B5998;  
+}  
+    .fa-google {  
+    
+  color:#dd4b39; 
+} 
+.fa-instagram {  
+   
+  color:#125688;  
+}  
+
+    .form_style{
+          
+          
+          margin-left: 480px;
+          margin-right: 480px;
+          margin-top: 50px;
+         
+          box-shadow: 10px 10px 5px 12px #125688;
+          border-radius: 30px;
+          
+        
+    }
+    
+    input[type=text],input[type=password]{
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: #00053D;
+  border: none;
+}
+input[type=submit]
+  {
+ background-color:#3862A9;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 2px 2px #00053D;
+  
+  align-items: center;
+  align-self: center;
+}
+  label{
+    color: rgb(6, 5, 5);
+    float: inline-start;
+  }
+
+a{
+    text-decoration: none;
+}
+
+
+</style>
+</head>
+<body >
+
+
+  
+  <div class="form_style" style="text-align: center;padding-top: 20px;">
+    <img src="{% static 'images/srs.png' %}" width="80px"style="border-radius: 20px;box-shadow: 5px 5px 2px 2px #00053D;">
+
+    <h1 style="text-align: center; padding: 10px;color: #3862A9;">SIGN IN</h1>
+    
+    <form style="text-align: center;" action="{% url 'login_page' %}" method="post">
+        {% csrf_token %}
+        <label for="name">Username</label><br>
+        <input type="text" id="name" name="username" placeholder="Enter Username"><br>
+        <label for="password">Password</label><br>
+        <input type="password" id="name" name="password" placeholder="Enter password"><br>
+        
+        <a href="#" style="color:rgb(11, 2, 2) ;"><b>forgot Password?</b></a><br>
+        <input type="submit" value="SIGN IN"><br>
+        
+        <a href="#" style="color:rgb(11, 2, 2) ;">Do't have an account?</a>
+        
+        <a href="{% url 'signup' %}" style="color:rgb(11, 2, 2);padding-left: 5px;"><b>Sign Up</b></a><br><br>
+        <h4><b>Or Log In with</b></h4>
+        <a href="#" class="fa fa-google"></a> 
+        <a href="#" class="fa fa-facebook"></a> 
+        <a href="#" class="fa fa-instagram"></a> <br><br>
+
+      
+      
+      </form>
+
+
+
+</div><br><br>
+
+
+
+  
+    
+</body>
+</html>

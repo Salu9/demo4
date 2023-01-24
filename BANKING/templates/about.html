@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>About</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/srs.png' %}">
+    
+    <link rel="stylesheet"
+    href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body{
+            background-image: url(https://banking.lemnisk.co/assets/img/DigitalBankBackground.png);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+    
+    .form_style{
+          
+          
+          margin-left: 400px;
+          margin-right: 400px;
+          margin-top: 50px;
+         
+          box-shadow: 10px 10px 5px 12px #125688;
+          border-radius: 30px;
+          
+        
+    }
+    
+    input[type=text],input[type=password],input[type=email],input[type=number],input[type=date],select{
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 38B6FF;
+  border: none;
+}
+input[type=submit]
+  {
+ background-color:#3862A9;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 2px 2px #00053D;
+  
+  align-items: center;
+  align-self: center;
+}
+   
+    
+  </style>
+</head>
+<body  >
+  <div class="form_style" style="text-align: center;padding-top: 20px;">
+    
+
+    
+    <form style="text-align: center;" action="{% url 'profile' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+       
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="username" placeholder="Enter Username"><br>
+    
+            <label for="name"> Email</label><br>
+     
+            <input type="email" id="name" name="email" placeholder="Enter Email Address"><br>
+          <label for="name"> Date Of Birth</label><br>
+        
+          <input type="date" name="date"><br>
+    
+        <label> AGE</label><br>
+      
+        <input type="number" name="age" placeholder="Enter Age"><br>
+ 
+    
+        
+        <label for="name"> Contact Number</label><br>
+      
+        <input type="number" id="name" name="cnumber" placeholder="Enter Contact Number"><br>
+        <label for="password">Query</label><br>
+        <input type="text"  name="query" placeholder="Enter Query" style="padding: 50px;"><br>
+        
+        <input type="submit" value="SUBMIT">
+        <br><br>
+        <div>
+        
+        </div><br>
+    
+
+    </form>
+  </div><br><br>
+</body>
+    </html>

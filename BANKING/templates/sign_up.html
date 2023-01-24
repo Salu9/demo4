@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Sign up</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/srs.png' %}">
+    
+    <link rel="stylesheet"
+    href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body{
+            background-image: url(https://banking.lemnisk.co/assets/img/DigitalBankBackground.png);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+    
+    .form_style{
+          
+          
+          margin-left: 400px;
+          margin-right: 400px;
+          margin-top: 50px;
+         
+          box-shadow: 10px 10px 5px 12px #125688;
+          border-radius: 30px;
+          
+        
+    }
+    
+    input[type=text],input[type=password],input[type=email],input[type=number],input[type=date],select{
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: #00053D;
+  border: none;
+}
+input[type=submit]
+  {
+ background-color:#3862A9;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 2px 2px #00053D;
+  
+  align-items: center;
+  align-self: center;
+}
+   
+    
+  </style>
+</head>
+<body  >
+  <div class="form_style" style="text-align: center;padding-top: 20px;">
+    <img src="{% static 'images/srs.png' %}" width="80px"style="border-radius: 20px;box-shadow: 5px 5px 2px 2px #00053D;">
+
+    <h1 style="text-align: center; padding: 10px;color: #3862A9;">SIGN UP</h1>
+    
+    <form style="text-align: center;" action="{% url 'usercreate' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+       <label for="name">First Name</label><br>
+       <input type="text" id="name" name="fname" placeholder="Enter Firstname"><br>
+       <label for="name">Last Name</label><br>
+       <input type="text" id="name" name="lname" placeholder="Enter Lastname"><br>
+        <label for="name">Username</label><br>
+        <input type="text" id="name" name="username" placeholder="Enter Username"><br>
+    
+            <label for="name"> Email</label><br>
+     
+            <input type="email" id="name" name="email" placeholder="Enter Email Address"><br>
+         
+         <label for="password">Password</label><br>
+        <input type="text" id="password" name="password" placeholder="Enter Password"><br>
+        <label for="cpassword">Confirm Password</label><br>
+        <input type="text" id="name" name="cpassword" placeholder="confirm password"><br>
+        <input type="submit" value="SIGN UP">
+        <br><br>
+        <div>
+        <a href="#" style="color: rgb(8, 2, 2);">Already have an Account?</a>
+        <a href="{% url 'login' %}" style="color: #030305; padding-left: 10px;"><b>Sign In</b></a>
+        </div><br>
+    
+
+    </form>
+  </div><br><br>
+</body>
+    </html>
